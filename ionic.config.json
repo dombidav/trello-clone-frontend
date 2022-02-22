@@ -1,0 +1,7 @@
+{
+  "name": "trello-clone-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
