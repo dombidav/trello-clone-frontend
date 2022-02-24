@@ -18,7 +18,6 @@ export class StorageService {
   }
 
   async init() {
-    // If using, define drivers here: await this.storage.defineDriver(/*...*/);
     this._storage = await this.storage.create()
     this._ready = true
   }
