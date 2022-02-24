@@ -18,15 +18,15 @@ form {
   margin-top: 30px;
 }
 
-.login-form {
+.register-form {
   width: 380px;
-  height: 510px;
+  height: 620px;
   margin: 20px;
   background: #1a2226 !important;
   border-radius: 10px !important;
 }
 
-ion-input[type="text"], ion-input[type="password"] {
+ion-input[type="email"], ion-input[type="text"], ion-input[type="password"] {
   background: #1a2226;
   border: 2px solid #0db8de;
   border-radius: 10px;
@@ -36,7 +36,7 @@ ion-input[type="text"], ion-input[type="password"] {
   color: #0db8de;
 }
 
-ion-input[type="text"]:focus, ion-input[type="password"]:focus {
+ion-input[type="email"]:focus, ion-input[type="text"]:focus, ion-input[type="password"]:focus {
   outline: none;
   border: none;
   background: #1a2226;
@@ -61,22 +61,10 @@ ion-item {
   --border-radius: 10px !important;
 }
 
-.signup {
+.login {
   text-align: center;
   margin-top: 10px;
 }
 
-.buttons {
-  display: block;
-}
 
-.buttons-2 {
-  margin-top: 10px;
-}
 
-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
