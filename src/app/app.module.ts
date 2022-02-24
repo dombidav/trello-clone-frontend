@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module'
 import {IonicStorageModule} from '@ionic/storage-angular'
 import {StorageService} from './services/storage.service'
 import {AuthService} from './services/auth.service'
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent],
