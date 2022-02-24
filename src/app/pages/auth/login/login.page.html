@@ -6,17 +6,17 @@
         <div class="card-text">
           <form>
             <div class="form-group">
-              <label for="username">Username</label>
+              <label for="email">Email</label>
               <ion-item>
-                <ion-input id="username" type="text" class="form-control form-control-sm"></ion-input>
+                <ion-input id="email" name="email" [(ngModel)]="email" type="email" class="form-control form-control-sm"></ion-input>
               </ion-item>
 
               <label for="password">Password</label>
               <ion-item>
-                <ion-input id="password" type="password" class="form-control form-control-sm"></ion-input>
+                <ion-input id="password" name="password" [(ngModel)]="password" type="password" class="form-control form-control-sm"></ion-input>
               </ion-item>
 
-              <ion-button class="btn btn-block">Log in</ion-button>
+              <ion-button class="btn btn-block" (click)="login()">Log in</ion-button>
 
               <ion-buttons>
                 <ion-button routerLink="../register" class="signup">Don't have account?</ion-button>
