@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {StorageService} from './services/storage.service'
+import {AuthService} from './services/auth.service'
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -11,9 +12,14 @@ export class AppComponent implements OnInit{
     { title: 'Login', url: '/auth/login', icon: 'log-in' },
     { title: 'Register', url: '/auth/register', icon: 'log-in' },
   ]
-  constructor(private readonly storage: StorageService) {}
+  constructor(private readonly storage: StorageService, public readonly auth: AuthService) {}
 
   ngOnInit() {
-    this.storage.init().then()
+    this.init().then()
+  }
+
+  private async init() {
+    await this.storage.init()
+    await this.auth.init()
   }
 }
