@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import {HttpClient} from '@angular/common/http'
+import {environment} from '../../../environments/environment'
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(private readonly http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get(`${environment.api}/user`).subscribe(res => console.log(res))
   }
 
 }

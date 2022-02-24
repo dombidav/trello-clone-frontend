@@ -9,7 +9,8 @@ import { AppRoutingModule } from './app-routing.module'
 import {IonicStorageModule} from '@ionic/storage-angular'
 import {StorageService} from './services/storage.service'
 import {AuthService} from './services/auth.service'
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
+import {DefaultInterceptor} from "./interceptors/default.interceptor";
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,12 @@ import {HttpClientModule} from '@angular/common/http'
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StorageService,
     AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: (storage: StorageService) => new DefaultInterceptor(storage),
+      deps: [StorageService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
 })
